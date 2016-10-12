@@ -93,12 +93,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1164E8191DAE113600A78821 /* Build configuration list for PBXNativeTarget "Daystory" */;
 			buildPhases = (
-				2D7D35F92B01D924C9A3A61E /* 📦 Check Pods Manifest.lock */,
+				2D7D35F92B01D924C9A3A61E /* [CP] Check Pods Manifest.lock */,
 				1164E8031DAE113500A78821 /* Sources */,
 				1164E8041DAE113500A78821 /* Frameworks */,
 				1164E8051DAE113500A78821 /* Resources */,
-				B2D509FA05BC855550E34AB3 /* 📦 Embed Pods Frameworks */,
-				1E03A9796CA320A37B015A7F /* 📦 Copy Pods Resources */,
+				B2D509FA05BC855550E34AB3 /* [CP] Embed Pods Frameworks */,
+				1E03A9796CA320A37B015A7F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -157,14 +157,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1E03A9796CA320A37B015A7F /* 📦 Copy Pods Resources */ = {
+		1E03A9796CA320A37B015A7F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,29 +172,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Daystory/Pods-Daystory-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2D7D35F92B01D924C9A3A61E /* 📦 Check Pods Manifest.lock */ = {
+		2D7D35F92B01D924C9A3A61E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		B2D509FA05BC855550E34AB3 /* 📦 Embed Pods Frameworks */ = {
+		B2D509FA05BC855550E34AB3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,7 +271,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -316,7 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -331,7 +331,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9PB2U8V6L4;
 				INFOPLIST_FILE = Daystory/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.redoca.Daystory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -346,7 +346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9PB2U8V6L4;
 				INFOPLIST_FILE = Daystory/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.redoca.Daystory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
