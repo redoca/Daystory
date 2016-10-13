@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		063D7AFB990AEF94D2B29054 /* Pods_Daystory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A1B25EFE5C1C219986277E /* Pods_Daystory.framework */; };
 		1164E80B1DAE113500A78821 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1164E80A1DAE113500A78821 /* AppDelegate.swift */; };
-		1164E80D1DAE113500A78821 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1164E80C1DAE113500A78821 /* ViewController.swift */; };
 		1164E8121DAE113600A78821 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1164E8111DAE113600A78821 /* Assets.xcassets */; };
 		1164E8151DAE113600A78821 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1164E8131DAE113600A78821 /* LaunchScreen.storyboard */; };
 		11EDE6D01DAE313C006A73D6 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EDE6CF1DAE313C006A73D6 /* NetworkTools.swift */; };
+		11EDE6D31DAF12CA006A73D6 /* BasicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EDE6D21DAF12CA006A73D6 /* BasicModel.swift */; };
+		11EDE6D51DAF139B006A73D6 /* DayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EDE6D41DAF139B006A73D6 /* DayTableViewController.swift */; };
+		11EDE6D71DAF1698006A73D6 /* QueryEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EDE6D61DAF1698006A73D6 /* QueryEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1164E8071DAE113500A78821 /* Daystory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daystory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1164E80A1DAE113500A78821 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1164E80C1DAE113500A78821 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1164E8111DAE113600A78821 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1164E8141DAE113600A78821 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1164E8161DAE113600A78821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1164E81C1DAE118000A78821 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		11EDE6CF1DAE313C006A73D6 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		11EDE6D21DAF12CA006A73D6 /* BasicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicModel.swift; sourceTree = "<group>"; };
+		11EDE6D41DAF139B006A73D6 /* DayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTableViewController.swift; sourceTree = "<group>"; };
+		11EDE6D61DAF1698006A73D6 /* QueryEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryEvent.swift; sourceTree = "<group>"; };
 		72D483DDD95872B8B79E3248 /* Pods-Daystory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daystory.release.xcconfig"; path = "Pods/Target Support Files/Pods-Daystory/Pods-Daystory.release.xcconfig"; sourceTree = "<group>"; };
 		85B87ABEA0D13F6D1216B2A3 /* Pods-Daystory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daystory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Daystory/Pods-Daystory.debug.xcconfig"; sourceTree = "<group>"; };
 		D8A1B25EFE5C1C219986277E /* Pods_Daystory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daystory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,7 +67,9 @@
 			isa = PBXGroup;
 			children = (
 				1164E80A1DAE113500A78821 /* AppDelegate.swift */,
-				1164E80C1DAE113500A78821 /* ViewController.swift */,
+				11EDE6D41DAF139B006A73D6 /* DayTableViewController.swift */,
+				11EDE6D61DAF1698006A73D6 /* QueryEvent.swift */,
+				11EDE6D11DAF12AE006A73D6 /* Common */,
 				11EDE6CE1DAE30BC006A73D6 /* Tools */,
 				1164E8111DAE113600A78821 /* Assets.xcassets */,
 				1164E8131DAE113600A78821 /* LaunchScreen.storyboard */,
@@ -78,6 +84,14 @@
 				11EDE6CF1DAE313C006A73D6 /* NetworkTools.swift */,
 			);
 			name = Tools;
+			sourceTree = "<group>";
+		};
+		11EDE6D11DAF12AE006A73D6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				11EDE6D21DAF12CA006A73D6 /* BasicModel.swift */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 		4AD203EDB939204659699850 /* Frameworks */ = {
@@ -220,9 +234,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1164E80D1DAE113500A78821 /* ViewController.swift in Sources */,
 				1164E80B1DAE113500A78821 /* AppDelegate.swift in Sources */,
+				11EDE6D31DAF12CA006A73D6 /* BasicModel.swift in Sources */,
 				11EDE6D01DAE313C006A73D6 /* NetworkTools.swift in Sources */,
+				11EDE6D71DAF1698006A73D6 /* QueryEvent.swift in Sources */,
+				11EDE6D51DAF139B006A73D6 /* DayTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

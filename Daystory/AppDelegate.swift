@@ -8,6 +8,8 @@
 
 import UIKit
 
+import SVProgressHUD
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -18,10 +20,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
-        window?.rootViewController = ViewController()
+        
+        let nav = UINavigationController(rootViewController: DayTableViewController())
+        
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
         
+        setAppearance()
+        
         return true
+    }
+    
+    /**
+     App 整体样式设置
+     */
+    private func setAppearance() {
+        // 样式设置
+        UINavigationBar.appearance().tintColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+        UITabBar.appearance().tintColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+        SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
+        SVProgressHUD.setMinimumDismissTimeInterval(1.2)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
