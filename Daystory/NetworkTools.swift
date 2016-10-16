@@ -10,9 +10,9 @@ import UIKit
 
 import AFNetworking
 
+let APIAppKey = "a1d85a8953046eac0960e8c15b8a47a8"
+
 class NetworkTools: AFHTTPSessionManager {
-    
-    static let AppKey = "a1d85a8953046eac0960e8c15b8a47a8"
     
     static let tools:NetworkTools = {
         let url = URL(string: "http://v.juhe.cn/todayOnhistory/")

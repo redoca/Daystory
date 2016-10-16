@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		063D7AFB990AEF94D2B29054 /* Pods_Daystory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A1B25EFE5C1C219986277E /* Pods_Daystory.framework */; };
+		1161AB911DB366FF00999DDB /* QureyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1161AB901DB366FF00999DDB /* QureyDetail.swift */; };
+		1161AB931DB3671B00999DDB /* DayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1161AB921DB3671B00999DDB /* DayDetailViewController.swift */; };
 		1164E80B1DAE113500A78821 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1164E80A1DAE113500A78821 /* AppDelegate.swift */; };
 		1164E8121DAE113600A78821 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1164E8111DAE113600A78821 /* Assets.xcassets */; };
 		1164E8151DAE113600A78821 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1164E8131DAE113600A78821 /* LaunchScreen.storyboard */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1161AB901DB366FF00999DDB /* QureyDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QureyDetail.swift; sourceTree = "<group>"; };
+		1161AB921DB3671B00999DDB /* DayDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayDetailViewController.swift; sourceTree = "<group>"; };
 		1164E8071DAE113500A78821 /* Daystory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daystory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1164E80A1DAE113500A78821 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1164E8111DAE113600A78821 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +49,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1161AB8E1DB21D2500999DDB /* DayTable */ = {
+			isa = PBXGroup;
+			children = (
+				11EDE6D41DAF139B006A73D6 /* DayTableViewController.swift */,
+				11EDE6D61DAF1698006A73D6 /* QueryEvent.swift */,
+			);
+			name = DayTable;
+			sourceTree = "<group>";
+		};
+		1161AB8F1DB21D3600999DDB /* DayDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1161AB921DB3671B00999DDB /* DayDetailViewController.swift */,
+				1161AB901DB366FF00999DDB /* QureyDetail.swift */,
+			);
+			name = DayDetail;
+			sourceTree = "<group>";
+		};
 		1164E7FE1DAE113500A78821 = {
 			isa = PBXGroup;
 			children = (
@@ -67,8 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				1164E80A1DAE113500A78821 /* AppDelegate.swift */,
-				11EDE6D41DAF139B006A73D6 /* DayTableViewController.swift */,
-				11EDE6D61DAF1698006A73D6 /* QueryEvent.swift */,
+				1161AB8E1DB21D2500999DDB /* DayTable */,
+				1161AB8F1DB21D3600999DDB /* DayDetail */,
 				11EDE6D11DAF12AE006A73D6 /* Common */,
 				11EDE6CE1DAE30BC006A73D6 /* Tools */,
 				1164E8111DAE113600A78821 /* Assets.xcassets */,
@@ -234,7 +256,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1161AB931DB3671B00999DDB /* DayDetailViewController.swift in Sources */,
 				1164E80B1DAE113500A78821 /* AppDelegate.swift in Sources */,
+				1161AB911DB366FF00999DDB /* QureyDetail.swift in Sources */,
 				11EDE6D31DAF12CA006A73D6 /* BasicModel.swift in Sources */,
 				11EDE6D01DAE313C006A73D6 /* NetworkTools.swift in Sources */,
 				11EDE6D71DAF1698006A73D6 /* QueryEvent.swift in Sources */,

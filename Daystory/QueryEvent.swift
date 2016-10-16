@@ -9,7 +9,6 @@
 import UIKit
 
 class QueryEvent: BasicModel {
-
     /// 查询日期
     var day:String?
     /// 中文格式日期
@@ -18,9 +17,10 @@ class QueryEvent: BasicModel {
     var title:String?
     /// 事件 id
     var e_id:String?
-    
-    
-    /// 加载历史今天列表数据
+}
+
+extension QueryEvent {
+    /// 网络加载历史今天列表数据
     ///
     /// - parameter day:      日期 格式： "5/7"
     /// - parameter finished: 闭包回调 - 列表数据
@@ -37,12 +37,10 @@ class QueryEvent: BasicModel {
             day = formatter.string(from: Date())
         }
         // 3.添加参数 参数不可为可选值
-        let params = ["key": NetworkTools.AppKey as String,
+        let params = ["key": APIAppKey as String,
                       "date": day! as String]
         NetworkTools.shareNetworkTools().get(path, parameters: params, progress: nil, success: { (_, JSON) in
-            
             let jsonDic = JSON as! NSDictionary
-
             // 1.判断是接口返回是否正确
             let error_code = jsonDic["error_code"] as! Int
             if error_code == 0 {
@@ -52,10 +50,9 @@ class QueryEvent: BasicModel {
                 let error = NSError(domain: jsonDic["reason"] as! String, code: error_code, userInfo: nil)
                 finished(nil, error)
             }
-            
-            }) { (_, error) in
-                let error = error as NSError
-                finished(nil, error)
+        }) { (_, error) in
+            let error = error as NSError
+            finished(nil, error)
         }
     }
     
