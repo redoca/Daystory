@@ -8,4 +8,5 @@ target 'Daystory' do
   pod 'SDWebImage'
   pod 'SVProgressHUD'
   pod 'AFNetworking'
+  pod 'SDAutoLayout'
 end

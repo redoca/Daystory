@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		063D7AFB990AEF94D2B29054 /* Pods_Daystory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A1B25EFE5C1C219986277E /* Pods_Daystory.framework */; };
+		113CDCD01DB4DD12006AF9E1 /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113CDCCF1DB4DD12006AF9E1 /* DayTableViewCell.swift */; };
 		1161AB911DB366FF00999DDB /* QureyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1161AB901DB366FF00999DDB /* QureyDetail.swift */; };
 		1161AB931DB3671B00999DDB /* DayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1161AB921DB3671B00999DDB /* DayDetailViewController.swift */; };
 		1164E80B1DAE113500A78821 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1164E80A1DAE113500A78821 /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		113CDCCF1DB4DD12006AF9E1 /* DayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
 		1161AB901DB366FF00999DDB /* QureyDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QureyDetail.swift; sourceTree = "<group>"; };
 		1161AB921DB3671B00999DDB /* DayDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayDetailViewController.swift; sourceTree = "<group>"; };
 		1164E8071DAE113500A78821 /* Daystory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daystory.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				11EDE6D41DAF139B006A73D6 /* DayTableViewController.swift */,
+				113CDCCF1DB4DD12006AF9E1 /* DayTableViewCell.swift */,
 				11EDE6D61DAF1698006A73D6 /* QueryEvent.swift */,
 			);
 			name = DayTable;
@@ -258,6 +261,7 @@
 			files = (
 				1161AB931DB3671B00999DDB /* DayDetailViewController.swift in Sources */,
 				1164E80B1DAE113500A78821 /* AppDelegate.swift in Sources */,
+				113CDCD01DB4DD12006AF9E1 /* DayTableViewCell.swift in Sources */,
 				1161AB911DB366FF00999DDB /* QureyDetail.swift in Sources */,
 				11EDE6D31DAF12CA006A73D6 /* BasicModel.swift in Sources */,
 				11EDE6D01DAE313C006A73D6 /* NetworkTools.swift in Sources */,

@@ -25,7 +25,7 @@ class DayTableViewController: UITableViewController {
         
         self.title = "历史上的今天"
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: eventsReuseIdentifier)
+        tableView.register(DayTableViewCell.self, forCellReuseIdentifier: eventsReuseIdentifier)
 
         // 加载数据
         loadData()
@@ -59,11 +59,10 @@ extension DayTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: eventsReuseIdentifier, for: indexPath)
+        let event = events![indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: eventsReuseIdentifier, for: indexPath) as! DayTableViewCell
 
-        let evnet = events![indexPath.row]
-        
-        cell.textLabel?.text = evnet.title
+        cell.event = event
 
         return cell
     }

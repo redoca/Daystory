@@ -8,6 +8,8 @@
 
 import UIKit
 
+import SVProgressHUD
+
 class DayDetailViewController: UIViewController {
 
     /// 事件 id
@@ -28,15 +30,26 @@ class DayDetailViewController: UIViewController {
         setupUI()
         
         // 2.加载网络数据
-        QureyDetail.loadQueryDetail(e_id: e_id) { (detail, error) in
-            print(detail)
-        }
+        loadData()
     }
     
     private func setupUI() {
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
     }
 
+    /// 加载网络数据
+    func loadData() {
+        SVProgressHUD.show()
+        QureyDetail.loadQueryDetail(e_id: e_id) { (detail, error) in
+            if error == nil {
+                SVProgressHUD.dismiss()
+            } else {
+                SVProgressHUD.showError(withStatus: error?.localizedDescription)
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
