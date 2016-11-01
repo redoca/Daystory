@@ -15,7 +15,13 @@ class QureyDetail: BasicModel {
     var content: String?
     var picNo: String?
     var picUrl: [DetailPicUrl]?
-    
+}
+
+extension QureyDetail {
+    /// 网络加载事件详请
+    ///
+    /// - parameter e_id:     事件 id
+    /// - parameter finished: 闭包回调数据
     class func loadQueryDetail(e_id: String?, finished:@escaping (_ detail: QureyDetail?,_ error: NSError?)->()) {
         // 1.接口地址
         let path = "queryDetail.php"
@@ -48,6 +54,7 @@ class QureyDetail: BasicModel {
     }
 }
 
+/// 图片组 model
 class DetailPicUrl: BasicModel {
     var pic_title: String?
     var id: Int = 0

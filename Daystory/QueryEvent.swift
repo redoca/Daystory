@@ -12,11 +12,18 @@ class QueryEvent: BasicModel {
     /// 查询日期
     var day:String?
     /// 中文格式日期
-    var data:String?
+    var date:String? {
+        didSet {
+            year = date?.substring(to: (date?.range(of: "年")?.upperBound)!)
+        }
+    }
     /// 事件标题
     var title:String?
     /// 事件 id
     var e_id:String?
+    
+    /// 年份
+    var year:String?
 }
 
 extension QueryEvent {
@@ -30,11 +37,7 @@ extension QueryEvent {
         // 2.判断是否有日期参数，没有的话取今日
         var day = day
         if day == nil {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "MM/dd"
-            // 设置时间的区域(真机必须设置, 否则可能不能转换成功)
-            formatter.locale = Locale(identifier: "en")
-            day = formatter.string(from: Date())
+            day = Date().dateMD
         }
         // 3.添加参数 参数不可为可选值
         let params = ["key": APIAppKey as String,

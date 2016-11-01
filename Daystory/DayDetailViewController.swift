@@ -15,6 +15,8 @@ class DayDetailViewController: UIViewController {
     /// 事件 id
     var e_id: String?
     
+    var dayDetailView: DayDetailView?
+    
     init(e_id: String) {
         self.e_id = e_id
         super.init(nibName: nil, bundle: nil)
@@ -27,15 +29,10 @@ class DayDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // 1.设置ui
-        setupUI()
-        
+        view = DayDetailView()
+        dayDetailView = view as! DayDetailView?
         // 2.加载网络数据
         loadData()
-    }
-    
-    private func setupUI() {
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
     }
 
     /// 加载网络数据
@@ -44,6 +41,7 @@ class DayDetailViewController: UIViewController {
         QureyDetail.loadQueryDetail(e_id: e_id) { (detail, error) in
             if error == nil {
                 SVProgressHUD.dismiss()
+                self.dayDetailView?.detail = detail
             } else {
                 SVProgressHUD.showError(withStatus: error?.localizedDescription)
             }
