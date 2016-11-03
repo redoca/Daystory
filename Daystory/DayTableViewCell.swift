@@ -14,7 +14,7 @@ class DayTableViewCell: UITableViewCell {
 
     var event: QueryEvent? {
         didSet {
-            titleLabel.attributedText = event?.title?.attributedStr
+            titleLabel.text = event?.title
             yearLabel.text = event?.year
         }
     }
@@ -82,7 +82,6 @@ class DayTableViewCell: UITableViewCell {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18)
-        label.isAttributedContent = true
         return label
     }()
     /// 年份

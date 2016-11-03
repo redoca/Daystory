@@ -15,8 +15,8 @@ class DayDetailView: UIScrollView {
     var detail: QureyDetail? {
         didSet {
             titleLabel.text = detail?.title
-            detailLabel.text = detail?.content
-//            detailLabel.attributedText = detail?.content?.attributedStr
+//            detailLabel.text = detail?.content
+            detailLabel.attributedText = detail?.content?.attributedStr
             self.layoutIfNeeded()
             contentSize = CGSize(width: 0, height: detailLabel.frame.maxY)
         }
@@ -49,13 +49,14 @@ class DayDetailView: UIScrollView {
             .rightEqualToView(self)?
             .heightIs(1)
         
-        let _ = detailLabel.sd_layout()
-            .leftSpaceToView(self, 10)?
-            .topSpaceToView(lineLabel, 10)?
-            .rightSpaceToView(self, 10)?
-//            .heightIs(1000)
-            .autoHeightRatio(0)
-        detailLabel.setMaxNumberOfLinesToShow(0)
+//        let _ = detailLabel.sd_layout()
+//            .leftSpaceToView(self, 10)?
+//            .topSpaceToView(lineLabel, 10)?
+//            .rightSpaceToView(self, 10)?
+//            .autoHeightRatio(0)
+//        detailLabel.setMaxNumberOfLinesToShow(0)
+        // SDAutoLayout autoHeightRatio 方法 会出现 cpu 点用过高
+        detailLabel.xmg_AlignVertical(type: XMG_AlignType.bottomLeft, referView: lineLabel, size: nil, offset: CGPoint(x: 20, y: 30))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -67,7 +68,7 @@ class DayDetailView: UIScrollView {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = NSTextAlignment.center
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
     }()
     /// 分隔线
@@ -79,9 +80,11 @@ class DayDetailView: UIScrollView {
     /// 内容
     private lazy var detailLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15)
+        label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = #colorLiteral(red: 0.1563676894, green: 0.1678637564, blue: 0.2093632221, alpha: 1)
 //        label.isAttributedContent = true
+        label.numberOfLines = 0
+        label.preferredMaxLayoutWidth = UIScreen.main.bounds.width - 30 //限制最大宽度
         return label
     }()
 }
