@@ -15,8 +15,8 @@ class DayDetailView: UIScrollView {
     var detail: QureyDetail? {
         didSet {
             titleLabel.text = detail?.title
-//            detailLabel.text = detail?.content
-            detailLabel.attributedText = detail?.content?.attributedStr
+            detailLabel.text = detail?.content
+//            detailLabel.attributedText = detail?.content?.attributedStr
             self.layoutIfNeeded()
             contentSize = CGSize(width: 0, height: detailLabel.frame.maxY)
         }
@@ -81,7 +81,7 @@ class DayDetailView: UIScrollView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 15)
         label.textColor = #colorLiteral(red: 0.1563676894, green: 0.1678637564, blue: 0.2093632221, alpha: 1)
-        label.isAttributedContent = true
+//        label.isAttributedContent = true
         return label
     }()
 }
