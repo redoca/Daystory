@@ -9,5 +9,4 @@ target 'Daystory' do
   pod 'SVProgressHUD'
   pod 'AFNetworking'
   pod 'SDAutoLayout'
-  pod 'M13ProgressSuite'
 end

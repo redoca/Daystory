@@ -14,7 +14,6 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - M13ProgressSuite (1.2.8)
   - SDAutoLayout (2.1.7)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
@@ -23,18 +22,16 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - M13ProgressSuite
   - SDAutoLayout
   - SDWebImage
   - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  M13ProgressSuite: c357c8c163a59a7405e5a9ad7e9c63a19e5e5d20
   SDAutoLayout: e9b36d04b8c0b504762a04d76fbbe5108944297a
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: 3f1d01dda3683a2062a015b065073090c3364d0d
+PODFILE CHECKSUM: 54a00cc6260a97e6a2f02760c55ce498566e42b5
 
 COCOAPODS: 1.1.0.beta.2
