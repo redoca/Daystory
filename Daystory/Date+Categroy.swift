@@ -26,10 +26,10 @@ extension Date
     }
     
     
-    /// 今月日 格式: MM/dd
+    /// 今月日 格式: M/d
     var dateMD: String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd"
+        formatter.dateFormat = "M/d"
         // 设置时间的区域(真机必须设置, 否则可能不能转换成功)
         formatter.locale = Locale(identifier: "en")
         return formatter.string(from: self)
