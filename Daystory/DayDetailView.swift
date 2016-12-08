@@ -9,6 +9,7 @@
 import UIKit
 
 import SDAutoLayout
+import SDWebImage
 
 class DayDetailView: UIScrollView {
     
@@ -16,7 +17,18 @@ class DayDetailView: UIScrollView {
         didSet {
             titleLabel.text = detail?.title
 //            detailLabel.text = detail?.content
+            print(detail?.content ?? "")
             detailLabel.attributedText = detail?.content?.attributedStr
+            if detail!.picUrl!.count == 0 {
+                imageBtn.setImage(nil, for: .normal)
+                let _ = imageBtn.sd_resetLayout()
+                .leftSpaceToView(self, 20)?
+                .topSpaceToView(lineLabel, 20)?
+                .rightSpaceToView(self, 20)?
+                .heightIs(1)
+            } else {
+                imageBtn.sd_setImage(with: URL.init(string: (detail!.picUrl!.first?.url)!), for: .normal)
+            }
             self.layoutIfNeeded()
             contentSize = CGSize(width: 0, height: detailLabel.frame.maxY)
         }
@@ -24,7 +36,6 @@ class DayDetailView: UIScrollView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setupUI()
     }
     
@@ -34,6 +45,7 @@ class DayDetailView: UIScrollView {
         
         addSubview(titleLabel)
         addSubview(lineLabel)
+        addSubview(imageBtn)
         addSubview(detailLabel)
         
         let _ = titleLabel.sd_layout()
@@ -49,6 +61,12 @@ class DayDetailView: UIScrollView {
             .rightEqualToView(self)?
             .heightIs(1)
         
+        let _ = imageBtn.sd_layout()
+            .leftSpaceToView(self, 20)?
+            .topSpaceToView(lineLabel, 20)?
+            .rightSpaceToView(self, 20)?
+            .heightIs(160)
+        
 //        let _ = detailLabel.sd_layout()
 //            .leftSpaceToView(self, 10)?
 //            .topSpaceToView(lineLabel, 10)?
@@ -56,7 +74,7 @@ class DayDetailView: UIScrollView {
 //            .autoHeightRatio(0)
 //        detailLabel.setMaxNumberOfLinesToShow(0)
         // SDAutoLayout autoHeightRatio 方法 会出现 cpu 点用过高
-        detailLabel.xmg_AlignVertical(type: XMG_AlignType.bottomLeft, referView: lineLabel, size: nil, offset: CGPoint(x: 20, y: 30))
+        detailLabel.xmg_AlignVertical(type: XMG_AlignType.bottomLeft, referView: imageBtn, size: nil, offset: CGPoint(x: 0, y: 20))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -86,5 +104,13 @@ class DayDetailView: UIScrollView {
         label.numberOfLines = 0
         label.preferredMaxLayoutWidth = UIScreen.main.bounds.width - 30 //限制最大宽度
         return label
+    }()
+    /// 图片
+    private lazy var imageBtn: UIButton = {
+        let btn = UIButton()
+        btn.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+        btn.layer.shadowOffset = CGSize(width: 0, height: 2)
+        btn.layer.shadowOpacity = 0.80;
+        return btn
     }()
 }
