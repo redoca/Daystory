@@ -27,7 +27,10 @@ class DayDetailView: UIScrollView {
                 .rightSpaceToView(self, 20)?
                 .heightIs(1)
             } else {
-                imageBtn.sd_setImage(with: URL.init(string: (detail!.picUrl!.first?.url)!), for: .normal)
+                activityIndicator.startAnimating()
+                imageBtn.sd_setImage(with: URL(string: (detail!.picUrl!.first?.url)!), for: .normal, completed: { (image, error, _, _) in
+                    self.activityIndicator.stopAnimating()
+                })
             }
             self.layoutIfNeeded()
             contentSize = CGSize(width: 0, height: detailLabel.frame.maxY)
@@ -47,6 +50,7 @@ class DayDetailView: UIScrollView {
         addSubview(lineLabel)
         addSubview(imageBtn)
         addSubview(detailLabel)
+        addSubview(activityIndicator)
         
         let _ = titleLabel.sd_layout()
             .leftSpaceToView(self, 10)?
@@ -66,6 +70,10 @@ class DayDetailView: UIScrollView {
             .topSpaceToView(lineLabel, 20)?
             .rightSpaceToView(self, 20)?
             .heightIs(160)
+        
+        let _ = activityIndicator.sd_layout()
+            .centerXEqualToView(imageBtn)?
+            .centerYEqualToView(imageBtn)
         
 //        let _ = detailLabel.sd_layout()
 //            .leftSpaceToView(self, 10)?
@@ -105,7 +113,7 @@ class DayDetailView: UIScrollView {
         label.preferredMaxLayoutWidth = UIScreen.main.bounds.width - 30 //限制最大宽度
         return label
     }()
-    /// 图片
+    /// 图片按钮
     private lazy var imageBtn: UIButton = {
         let btn = UIButton()
         btn.imageView?.contentMode = UIViewContentMode.scaleAspectFit
@@ -113,4 +121,7 @@ class DayDetailView: UIScrollView {
         btn.layer.shadowOpacity = 0.80;
         return btn
     }()
+    /// 图片加载菊花
+    private lazy var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+
 }
