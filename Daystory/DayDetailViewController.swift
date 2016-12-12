@@ -31,6 +31,7 @@ class DayDetailViewController: UIViewController {
         // 1.设置ui
         view = DayDetailView()
         dayDetailView = view as! DayDetailView?
+        dayDetailView?.detailDelegate = self
         // 2.加载网络数据
         loadData()
     }
@@ -52,16 +53,19 @@ class DayDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension DayDetailViewController: DayDetailViewDelegate {
+    /// 图片浏览
+    ///
+    /// - Parameters:
+    ///   - index: 显示 index
+    ///   - urls: 图片 url 数组
+    func imageClick(index: Int, urls: [URL]) {
+        // 1.创建图片浏览器
+        let vc = PhotoBrowserController(index: index, urls: urls)
+        // 2.显示图片浏览器
+        present(vc, animated: true, completion: nil)
     }
-    */
-
 }

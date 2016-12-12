@@ -11,13 +11,23 @@ import UIKit
 import SDAutoLayout
 import SDWebImage
 
+//Swift 中定义协议需遵守NSObjectProtocol
+protocol DayDetailViewDelegate: NSObjectProtocol {
+    /// 图片浏览
+    ///
+    /// - Parameters:
+    ///   - index: 显示 index
+    ///   - urls: 图片 url 数组
+    func imageClick(index: Int, urls: [URL])
+}
+
 class DayDetailView: UIScrollView {
+    
+    weak var detailDelegate: DayDetailViewDelegate?
     
     var detail: QureyDetail? {
         didSet {
             titleLabel.text = detail?.title
-//            detailLabel.text = detail?.content
-            print(detail?.content ?? "")
             detailLabel.attributedText = detail?.content?.attributedStr
             if detail!.picUrl!.count == 0 {
                 imageBtn.setImage(nil, for: .normal)
@@ -28,7 +38,7 @@ class DayDetailView: UIScrollView {
                 .heightIs(1)
             } else {
                 activityIndicator.startAnimating()
-                imageBtn.sd_setImage(with: URL(string: (detail!.picUrl!.first?.url)!), for: .normal, completed: { (image, error, _, _) in
+                imageBtn.sd_setImage(with: detail!.picUrl!.first?.urlobj, for: .normal, completed: { (image, error, _, _) in
                     self.activityIndicator.stopAnimating()
                 })
             }
@@ -89,6 +99,12 @@ class DayDetailView: UIScrollView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc
+    /// 图片点击
+    private func imageBtnClick() {
+        detailDelegate?.imageClick(index: 0, urls: detail!.urls!)
+    }
+    
     // MARK: - 懒加载
     /// 标题
     private lazy var titleLabel: UILabel = {
@@ -119,6 +135,7 @@ class DayDetailView: UIScrollView {
         btn.imageView?.contentMode = UIViewContentMode.scaleAspectFit
         btn.layer.shadowOffset = CGSize(width: 0, height: 2)
         btn.layer.shadowOpacity = 0.80;
+        btn.addTarget(self, action: #selector(DayDetailView.imageBtnClick), for: .touchUpInside)
         return btn
     }()
     /// 图片加载菊花

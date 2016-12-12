@@ -16,6 +16,8 @@
 		1164E80B1DAE113500A78821 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1164E80A1DAE113500A78821 /* AppDelegate.swift */; };
 		1164E8121DAE113600A78821 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1164E8111DAE113600A78821 /* Assets.xcassets */; };
 		1164E8151DAE113600A78821 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1164E8131DAE113600A78821 /* LaunchScreen.storyboard */; };
+		1184A01E1DFE2AD600E004DC /* PhotoBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1184A01C1DFE2AD600E004DC /* PhotoBrowserCell.swift */; };
+		1184A01F1DFE2AD600E004DC /* PhotoBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1184A01D1DFE2AD600E004DC /* PhotoBrowserController.swift */; };
 		11BA29691DCB252700238D1D /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BA29681DCB252700238D1D /* UIView+AutoLayout.swift */; };
 		11DAECF41DC18BCD009CEFE6 /* Date+Categroy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DAECF31DC18BCD009CEFE6 /* Date+Categroy.swift */; };
 		11EDE6D01DAE313C006A73D6 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EDE6CF1DAE313C006A73D6 /* NetworkTools.swift */; };
@@ -36,6 +38,8 @@
 		1164E8141DAE113600A78821 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1164E8161DAE113600A78821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1164E81C1DAE118000A78821 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		1184A01C1DFE2AD600E004DC /* PhotoBrowserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserCell.swift; sourceTree = "<group>"; };
+		1184A01D1DFE2AD600E004DC /* PhotoBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserController.swift; sourceTree = "<group>"; };
 		11BA29681DCB252700238D1D /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		11DAECF31DC18BCD009CEFE6 /* Date+Categroy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Categroy.swift"; sourceTree = "<group>"; };
 		11EDE6CF1DAE313C006A73D6 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
@@ -72,6 +76,7 @@
 		1161AB8F1DB21D3600999DDB /* DayDetail */ = {
 			isa = PBXGroup;
 			children = (
+				1184A0201DFE2AE500E004DC /* PhotoBrowser */,
 				1161AB921DB3671B00999DDB /* DayDetailViewController.swift */,
 				113190851DC1F7D500AF8580 /* DayDetailView.swift */,
 				1161AB901DB366FF00999DDB /* QureyDetail.swift */,
@@ -110,6 +115,15 @@
 				1164E8161DAE113600A78821 /* Info.plist */,
 			);
 			path = Daystory;
+			sourceTree = "<group>";
+		};
+		1184A0201DFE2AE500E004DC /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				1184A01D1DFE2AD600E004DC /* PhotoBrowserController.swift */,
+				1184A01C1DFE2AD600E004DC /* PhotoBrowserCell.swift */,
+			);
+			name = PhotoBrowser;
 			sourceTree = "<group>";
 		};
 		11EDE6CE1DAE30BC006A73D6 /* Tools */ = {
@@ -274,10 +288,12 @@
 				1161AB931DB3671B00999DDB /* DayDetailViewController.swift in Sources */,
 				11BA29691DCB252700238D1D /* UIView+AutoLayout.swift in Sources */,
 				1164E80B1DAE113500A78821 /* AppDelegate.swift in Sources */,
+				1184A01F1DFE2AD600E004DC /* PhotoBrowserController.swift in Sources */,
 				113190881DC209D700AF8580 /* String+Categroy.swift in Sources */,
 				11DAECF41DC18BCD009CEFE6 /* Date+Categroy.swift in Sources */,
 				113CDCD01DB4DD12006AF9E1 /* DayTableViewCell.swift in Sources */,
 				1161AB911DB366FF00999DDB /* QureyDetail.swift in Sources */,
+				1184A01E1DFE2AD600E004DC /* PhotoBrowserCell.swift in Sources */,
 				11EDE6D31DAF12CA006A73D6 /* BasicModel.swift in Sources */,
 				113190861DC1F7D500AF8580 /* DayDetailView.swift in Sources */,
 				11EDE6D01DAE313C006A73D6 /* NetworkTools.swift in Sources */,

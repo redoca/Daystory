@@ -14,7 +14,15 @@ class QureyDetail: BasicModel {
     var title: String?
     var content: String?
     var picNo: String?
-    var picUrl: [DetailPicUrl]?
+    var picUrl: [DetailPicUrl]? {
+        didSet {
+            urls = [URL]()
+            for url in picUrl! {
+                urls?.append(url.urlobj!)
+            }
+        }
+    }
+    var urls: [URL]?
 }
 
 extension QureyDetail {
@@ -58,7 +66,12 @@ extension QureyDetail {
 class DetailPicUrl: BasicModel {
     var pic_title: String?
     var id: Int = 0
-    var url: String?
+    var url: String? {
+        didSet {
+            urlobj = URL(string: url!)
+        }
+    }
+    var urlobj: URL?
     
     // 字典数组转换为模型数组
     class func dict2Model(_ list: [[String: AnyObject]]) -> [DetailPicUrl] {
